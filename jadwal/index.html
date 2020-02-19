@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimal-ui">
+    <title>Lexa - Responsive Bootstrap 4 Admin Dashboard</title>
+    <meta content="Admin Dashboard" name="description">
+    <meta content="Themesbrand" name="author">
+    <link rel="shortcut icon" href="assets\images\favicon.ico">
+    <link rel="stylesheet" href="../plugins/morris/morris.css">
+    <link href="assets\css\bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="assets\css\icons.css" rel="stylesheet" type="text/css">
+    <link href="assets\css\style.css" rel="stylesheet" type="text/css">
+    <link href="assets\css\clock.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="assets/js/PrayTimes.js"></script>
+</head>
+
+<body>
+    <!-- Navigation Bar-->
+    <header id="topnav">
+        <div class="container-fluid">
+            <!-- Page-Title -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="page-title-box">
+                        <img src="assets\images\mosque.png" alt="" class="logo-small float-left">
+                        <h4 class="page-title">Masjid Al-Muiz</h4>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item active">Komplek Taman Cihanjuang, Ds. Cihanjuang, Kec. Parongpong</li>
+                        </ol>
+                        <div class="state-information">
+                            <div class="state-graph">
+                                
+                                <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- MENU Start -->
+        <div class="navbar-custom">
+            <div class="container-fluid">
+
+            </div><!-- end container-fluid -->
+        </div><!-- end navbar-custom -->
+    </header><!-- End Navigation Bar-->
+    <div class="wrapper">
+        <div class="container-fluid">
+            <div class="row" id="solat" onload="showJadwal()">
+                <!-- <div class="col-xl-4 col-md-6">
+                    <div class="card mini-stat bg-primary">
+                        <div class="card-body mini-stat-img">
+                            <div class="mini-stat-icon"><i class="mdi mdi-cube-outline float-right"></i></div>
+                            <div class="text-white">
+                                <h6 class="text-uppercase mb-3">Orders</h6>
+                                <h4 class="mb-4">1,587</h4><span class="badge badge-info">+11% </span><span
+                                    class="ml-2">From previous period</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6">
+                    <div class="card mini-stat bg-primary">
+                        <div class="card-body mini-stat-img">
+                            <div class="mini-stat-icon"><i class="mdi mdi-buffer float-right"></i></div>
+                            <div class="text-white">
+                                <h6 class="text-uppercase mb-3">Revenue</h6>
+                                <h4 class="mb-4">$46,782</h4><span class="badge badge-danger">-29% </span><span
+                                    class="ml-2">From previous period</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6">
+                    <div class="card mini-stat bg-primary">
+                        <div class="card-body mini-stat-img">
+                            <div class="mini-stat-icon"><i class="mdi mdi-tag-text-outline float-right"></i></div>
+                            <div class="text-white">
+                                <h6 class="text-uppercase mb-3">Average Price</h6>
+                                <h4 class="mb-4">$15.9</h4><span class="badge badge-warning">0% </span><span
+                                    class="ml-2">From previous period</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6">
+                    <div class="card mini-stat bg-primary">
+                        <div class="card-body mini-stat-img">
+                            <div class="mini-stat-icon"><i class="mdi mdi-briefcase-check float-right"></i></div>
+                            <div class="text-white">
+                                <h6 class="text-uppercase mb-3">Product Sold</h6>
+                                <h4 class="mb-4">1890</h4><span class="badge badge-info">+89% </span><span
+                                    class="ml-2">From previous period</span>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div><!-- end row -->
+
+            <div class="row">
+                <div class="col-xl-6">
+                    <div class="card m-b-20">
+                        <div class="card-body">
+                            <h4 class="mt-0 m-b-30 header-title">Latest Transactions</h4>
+                            <div class="table-responsive">
+                                <table class="table table-vertical">
+                                    <tbody>
+                                        <tr>
+                                            <td><img src="assets\images\users\user-2.jpg" alt="user-image"
+                                                    class="thumb-sm rounded-circle mr-2"> Herbert C. Patton</td>
+                                            <td><i class="mdi mdi-checkbox-blank-circle text-success"></i> Confirm</td>
+                                            <td>$14,584<p class="m-0 text-muted font-14">Amount</p>
+                                            </td>
+                                            <td>5/12/2016<p class="m-0 text-muted font-14">Date</p>
+                                            </td>
+                                            <td><button type="button"
+                                                    class="btn btn-secondary btn-sm waves-effect waves-light">Edit</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="assets\images\users\user-3.jpg" alt="user-image"
+                                                    class="thumb-sm rounded-circle mr-2"> Mathias N. Klausen</td>
+                                            <td><i class="mdi mdi-checkbox-blank-circle text-warning"></i> Waiting
+                                                payment</td>
+                                            <td>$8,541<p class="m-0 text-muted font-14">Amount</p>
+                                            </td>
+                                            <td>10/11/2016<p class="m-0 text-muted font-14">Date</p>
+                                            </td>
+                                            <td><button type="button"
+                                                    class="btn btn-secondary btn-sm waves-effect waves-light">Edit</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="assets\images\users\user-4.jpg" alt="user-image"
+                                                    class="thumb-sm rounded-circle mr-2"> Nikolaj S. Henriksen</td>
+                                            <td><i class="mdi mdi-checkbox-blank-circle text-success"></i> Confirm</td>
+                                            <td>$954<p class="m-0 text-muted font-14">Amount</p>
+                                            </td>
+                                            <td>8/11/2016<p class="m-0 text-muted font-14">Date</p>
+                                            </td>
+                                            <td><button type="button"
+                                                    class="btn btn-secondary btn-sm waves-effect waves-light">Edit</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="assets\images\users\user-5.jpg" alt="user-image"
+                                                    class="thumb-sm rounded-circle mr-2"> Lasse C. Overgaard</td>
+                                            <td><i class="mdi mdi-checkbox-blank-circle text-danger"></i> Payment
+                                                expired</td>
+                                            <td>$44,584<p class="m-0 text-muted font-14">Amount</p>
+                                            </td>
+                                            <td>7/11/2016<p class="m-0 text-muted font-14">Date</p>
+                                            </td>
+                                            <td><button type="button"
+                                                    class="btn btn-secondary btn-sm waves-effect waves-light">Edit</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="assets\images\users\user-6.jpg" alt="user-image"
+                                                    class="thumb-sm rounded-circle mr-2"> Kasper S. Jessen</td>
+                                            <td><i class="mdi mdi-checkbox-blank-circle text-success"></i> Confirm</td>
+                                            <td>$8,844<p class="m-0 text-muted font-14">Amount</p>
+                                            </td>
+                                            <td>1/11/2016<p class="m-0 text-muted font-14">Date</p>
+                                            </td>
+                                            <td><button type="button"
+                                                    class="btn btn-secondary btn-sm waves-effect waves-light">Edit</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="card m-b-20">
+                        <div class="card-body">
+                            <h4 class="mt-0 m-b-30 header-title">Latest Orders</h4>
+                            <div class="table-responsive">
+                                <table class="table table-vertical mb-1">
+                                    <tbody>
+                                        <tr>
+                                            <td>#12354781</td>
+                                            <td><img src="assets\images\users\user-1.jpg" alt="user-image"
+                                                    class="thumb-sm mr-2 rounded-circle"> Riverston Glass Chair</td>
+                                            <td><span class="badge badge-pill badge-success">Delivered</span></td>
+                                            <td>$185</td>
+                                            <td>5/12/2016</td>
+                                            <td><button type="button"
+                                                    class="btn btn-secondary btn-sm waves-effect waves-light">Edit</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#52140300</td>
+                                            <td><img src="assets\images\users\user-2.jpg" alt="user-image"
+                                                    class="thumb-sm mr-2 rounded-circle"> Shine Company Catalina</td>
+                                            <td><span class="badge badge-pill badge-success">Delivered</span></td>
+                                            <td>$1,024</td>
+                                            <td>5/12/2016</td>
+                                            <td><button type="button"
+                                                    class="btn btn-secondary btn-sm waves-effect waves-light">Edit</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#96254137</td>
+                                            <td><img src="assets\images\users\user-3.jpg" alt="user-image"
+                                                    class="thumb-sm mr-2 rounded-circle"> Trex Outdoor Furniture Cape
+                                            </td>
+                                            <td><span class="badge badge-pill badge-danger">Cancel</span></td>
+                                            <td>$657</td>
+                                            <td>5/12/2016</td>
+                                            <td><button type="button"
+                                                    class="btn btn-secondary btn-sm waves-effect waves-light">Edit</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#12365474</td>
+                                            <td><img src="assets\images\users\user-4.jpg" alt="user-image"
+                                                    class="thumb-sm mr-2 rounded-circle"> Oasis Bathroom Teak Corner
+                                            </td>
+                                            <td><span class="badge badge-pill badge-warning">Shipped</span></td>
+                                            <td>$8451</td>
+                                            <td>5/12/2016</td>
+                                            <td><button type="button"
+                                                    class="btn btn-secondary btn-sm waves-effect waves-light">Edit</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#85214796</td>
+                                            <td><img src="assets\images\users\user-5.jpg" alt="user-image"
+                                                    class="thumb-sm mr-2 rounded-circle"> BeoPlay Speaker</td>
+                                            <td><span class="badge badge-pill badge-success">Delivered</span></td>
+                                            <td>$584</td>
+                                            <td>5/12/2016</td>
+                                            <td><button type="button"
+                                                    class="btn btn-secondary btn-sm waves-effect waves-light">Edit</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#12354781</td>
+                                            <td><img src="assets\images\users\user-6.jpg" alt="user-image"
+                                                    class="thumb-sm mr-2 rounded-circle"> Riverston Glass Chair</td>
+                                            <td><span class="badge badge-pill badge-success">Delivered</span></td>
+                                            <td>$185</td>
+                                            <td>5/12/2016</td>
+                                            <td><button type="button"
+                                                    class="btn btn-secondary btn-sm waves-effect waves-light">Edit</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- end row -->
+        </div><!-- end container-fluid -->
+    </div><!-- end wrapper -->
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">© 2018 - 2019 Lexa <span class="d-none d-sm-inline-block">- Crafted with <i
+                            class="mdi mdi-heart text-danger"></i> by Themesbrand</span>.</div>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <div id="test" class="row">
+                                                                                                                                               </div>
+    </div>
+    <!-- jQuery  -->
+    <script src="assets\js\jquery.min.js"></script>
+    <script src="assets\js\bootstrap.bundle.min.js"></script>
+    <script src="assets\js\jquery.slimscroll.js"></script>
+    <script src="assets\js\waves.min.js"></script>
+    <script src="../plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
+    <!--Morris Chart-->
+    <script src="../plugins/morris/morris.min.js"></script>
+    <script src="../plugins/raphael/raphael-min.js"></script>
+    <script src="assets\pages\dashboard.js"></script><!-- App js -->
+    <script src="assets\js\app.js"></script>
+
+
+    <script type="text/javascript">
+        setInterval(function(){
+            location.reload();   
+        }, 86400000);
+        var date = new Date(); // today
+        // const days = ["AHAD", "SENIN", "SELASA", "RABU", "KAMIS", "JUM`AT", "SABTU"];
+        // const months = ["JAN", "FEB", "MAR","APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+        // var newdate = days[date.getDay()] + "  " + date.getDate() + "-" + months[date.getMonth()] + "-" + date.getFullYear();
+        prayTimes.tune({
+            imsak: 3,
+            fajr: 3,
+            dhuhr: 3,
+            asr: 3,
+            maghrib: 8
+        });
+        var times = prayTimes.getTimes(date, [-6.821282, 107.580103], +7);
+        var list = ['Imsak', 'Fajr', 'Dhuhr', 'Asr', 'Maghrib', 'Isha'];
+
+        var htmll = '';
+        for ( var i in list) {
+            htmll += ' <div class="col-xl-4 col-md-6">\
+            	<div class="card mini-stat bg-primary">\
+            		<div class="card-body mini-stat-img">\
+            			<div class="mini-stat-icon"><img src="../assets/images/64/' + list[i] + '.png" alt="" class="float-right logo-small">\
+            			</div>\
+            			<div class="text-white">\
+            				<h2 class="text-uppercase mb-3">' + list[i] + '</h2>\
+            				<h3 class="mb-4">' + times[list[i].toLowerCase()] + '</h3>\
+                            <span class="ml-2">' + date + '</span>\
+            			</div>\
+            		</div>\
+            	</div>\
+            </div>';
+            
+        }
+        document.getElementById('solat').innerHTML = htmll; 
+
+    </script>
+        <script type="text/javascript">
+        function showTime(){
+        var date = new Date();
+        const days = ["AHAD", "SENIN", "SELASA", "RABU", "KAMIS", "JUM`AT", "SABTU"];
+        const months = ["JAN", "FEB", "MAR","APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+        var h = date.getHours(); // 0 - 23
+        var m = date.getMinutes(); // 0 - 59
+        var s = date.getSeconds(); // 0 - 59
+        var session = "AM";
+        var d = days[date.getDay()];
+        var dd = date.getDate();
+        var mo = months[date.getMonth()];
+        var y = date.getFullYear();
+
+        // if(h == 0){
+        // h = 12;
+        // }
+
+        // if(h > 12){
+        // h = h - 12;
+        // session = "PM";
+        // }
+
+        h = (h < 10) ? "0" + h : h; m=(m < 10) ? "0" + m : m; s=(s < 10) ? "0" + s : s; var time=d + "," +dd+" "+mo+" "+y+" "+h + ":" + m + ":" + s ;
+        	document.getElementById("MyClockDisplay").innerText=time;
+        	document.getElementById("MyClockDisplay").textContent=time; setTimeout(showTime, 1000); } showTime();
+        </script>
+</body>
+
+</html>
